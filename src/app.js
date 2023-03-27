@@ -1,5 +1,16 @@
-import app from "./app.js";
-import { PORT } from "./config.js";
+import express from "express";
+import apiRoutes from "./routes/api.routes.js";
 
-app.listen(PORT);
-console.log(`Server listening on port ${PORT}`);
+const app = express();
+
+app.use(express.json());
+
+app.use("/api/", apiRoutes);
+
+app.use((req, res) => {
+  res.status(404).json({
+    message: "Not found",
+  });
+});
+
+export default app

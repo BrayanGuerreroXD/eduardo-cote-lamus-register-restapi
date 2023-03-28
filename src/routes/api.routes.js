@@ -1,11 +1,11 @@
 import { Router } from "express";
 
-import { getStudent } from "../controllers/students.controller.js";
+import { getUser } from "../controllers/users.controller.js";
 import { createRegister } from "../controllers/registers.controller.js";
 
 const router = Router();
 
-router.get("/students/:code", getStudent);
+router.get("/users/:code", getUser);
 
 router.post("/registers", createRegister);
 

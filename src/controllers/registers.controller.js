@@ -3,14 +3,16 @@ import { pool } from "../db.js";
 // Add register to DB
 export const createRegister = async (req, res) => {
   try {
-    const { student_code, entry_date } = req.body;
+    const { register_date, register_time, register_type_id, user_id } = req.body;
     const [rows] = await pool.query(
-      "INSERT INTO Register (student_code, entry_date) VALUES (?, ?)",
-      [student_code, entry_date]
+      "INSERT INTO register (register_date, register_time, register_type_id, user_id) VALUES (?, ?, ?, ?)",
+      [register_date, register_time, register_type_id, user_id]
     );
     res.send({
-      student_code,
-      entry_date,
+      register_date,
+      register_time,
+      register_type_id,
+      user_id,
     });
   } catch (error) {
     return res.status(500).json({

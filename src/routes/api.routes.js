@@ -7,6 +7,7 @@ const router = Router();
 
 router.get("/users/:code", getUser);
 
+
 router.post("/registers", createRegister);
 
 export default router;

@@ -3,7 +3,8 @@ import cors from "cors";
 import apiRoutes from "./routes/api.routes.js";
 
 const corsOptions = {
-  origin: 'https://brayanguerreroxd.github.io/eduardo-cote-lamus-react/'
+  // Por ahora que agarre todas las url que le lleguen
+  origin: '*'
 };
 
 const app = express();

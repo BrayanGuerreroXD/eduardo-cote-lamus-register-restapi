@@ -3,7 +3,7 @@ import cors from "cors";
 import apiRoutes from "./routes/api.routes.js";
 
 const corsOptions = {
-  origin: 'http://localhost:5173'
+  origin: 'https://brayanguerreroxd.github.io/eduardo-cote-lamus-react/'
 };
 
 const app = express();
